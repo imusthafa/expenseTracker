@@ -3,7 +3,7 @@ import 'package:expense_tracker/models/expense.dart';
 import 'package:flutter/material.dart';
 
 class ExpenseItem extends StatelessWidget {
-  ExpenseItem(this.expense, {super.key});
+  const ExpenseItem(this.expense, {super.key});
 
   final Expense expense;
   @override
@@ -12,9 +12,13 @@ class ExpenseItem extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(expense.title),
-            SizedBox(
+            Text(
+              expense.title,
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+            const SizedBox(
               height: 20,
             ),
             Row(
